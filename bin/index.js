@@ -26,7 +26,7 @@ async function createComponentFiles(options) {
     `/* Your component styles here */\n`
   );
 
-  if (options.hooksPattern) {
+  if (options.hooksPattern||options['hooks-pattern']) {
     // Create the hook file (e.g., Component/useComponent.jsx or Component/useComponent.tsx)
     const hookFileExt = options.template === "TypeScript" ? "tsx" : "jsx";
     await fs.writeFile(
@@ -35,7 +35,7 @@ async function createComponentFiles(options) {
     );
   }
 
-  if (options.testCase) {
+  if (options.testCase || options["test-case"]) {
     // Create the test file (e.g., Component/__test__/Component.test.jsx or Component/__test__/Component.test.tsx)
     const testFileExt = options.template === "TypeScript" ? "tsx" : "jsx";
     const testDir = path.join(componentDir, "__test__");
@@ -109,7 +109,7 @@ async function promptForMissingOptions(options) {
 export async function cli() {
   let options = parseArgumentsIntoOptions();
   options = await promptForMissingOptions(options);
-
+  console.log(options);
   // Create component files based on selected options
   try {
     await createComponentFiles(options);
