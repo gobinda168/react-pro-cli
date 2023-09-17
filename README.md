@@ -43,3 +43,13 @@ Create a TypeScript Component with Hooks and Test Cases:
 ```bash
 rpx --template TypeScript --hooks-pattern --test-cases --component MyComponent
 ```
+
+## Contributing
+Contributions are welcome! If you encounter any issues or have suggestions for improvements, please open an issue or submit a pull request on the GitHub repository.
+
+## License
+This project is licensed under the MIT License - see the LICENSE file for details.
+
+RPX is maintained by Gobinda Das -- Sr. Software Engineer Aptedge.
+
+
