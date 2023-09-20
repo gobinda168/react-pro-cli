@@ -27,7 +27,6 @@ rpx
 This command will initiate an interactive prompt that will guide you through the component creation process. You can choose the project template (TypeScript or JavaScript), specify whether you want to use hooks patterns, and decide if you want to generate test cases.
 
 ## Options
---skip-prompts: Use this option to skip the interactive prompts and provide all options directly through command-line arguments.
 
 --template: Specify the project template (TypeScript or JavaScript).
 
