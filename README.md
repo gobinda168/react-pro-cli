@@ -1,7 +1,7 @@
 # react-pro-cli-x 
 
-![npm](https://www.npmjs.com/package/react-pro-cli-x)
-![GitHub](https://github.com/gobinda168/react-pro-cli)
+[npm](https://www.npmjs.com/package/react-pro-cli-x)
+[GitHub](https://github.com/gobinda168/react-pro-cli)
 
 React Pro CLI-X is a powerful command-line tool for quickly generating React components with various options. It simplifies the process of creating React components with different templates, hooks patterns, and test cases.
 
