@@ -41,7 +41,7 @@ This command will initiate an interactive prompt that will guide you through the
 Create a TypeScript Component with Hooks and Test Cases:
 
 ```bash
-rpx --template TypeScript --hooks-pattern --test-cases --component MyComponent
+rpx --template TypeScript --hooksPattern --testCase --component MyComponent
 ```
 
 ## Contributing

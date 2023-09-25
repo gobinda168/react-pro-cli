@@ -91,7 +91,7 @@ async function promptForMissingOptions(options) {
       default: false,
     });
   }
-  if (!options.testCases) {
+  if (!options.testCase) {
     questions.push({
       type: "confirm",
       name: "testCase",
