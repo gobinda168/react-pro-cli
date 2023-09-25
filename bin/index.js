@@ -17,7 +17,7 @@ async function createComponentFiles(options) {
   // Create the component file (e.g., Component/Component.jsx or Component/Component.tsx)
   await fs.writeFile(
     path.join(componentDir, `${options.component}.${componentFileExt}`),
-    `import React from 'react';\n\nfunction Component() {\n  return (\n    <div>\n      {/* Your component code here */}\n    </div>\n  );\n}\n\nexport default Component;\n`
+    `import React from "react";\n\nimport styles from "./${options.component}.module.scss";\n\nfunction Component() {\n  return (\n    <div>\n      {/* Your component code here */}\n    </div>\n  );\n}\n\nexport default Component;\n`
   );
 
   // Create the style file (e.g., Component/Component.module.scss)
@@ -26,7 +26,7 @@ async function createComponentFiles(options) {
     `/* Your component styles here */\n`
   );
 
-  if (options.hooksPattern||options['hooks-pattern']) {
+  if (options.hooksPattern || options["hooks-pattern"]) {
     // Create the hook file (e.g., Component/useComponent.jsx or Component/useComponent.tsx)
     const hookFileExt = options.template === "TypeScript" ? "tsx" : "jsx";
     await fs.writeFile(
@@ -53,15 +53,26 @@ function parseArgumentsIntoOptions(rawArgs) {
 }
 
 async function promptForMissingOptions(options) {
+  const questions = [];
   const defaultTemplate = "Typescript";
-  if (options.skipPrompts) {
+  if (options.skip) {
+    if (!options.component) {
+      questions.push({
+        type: "input",
+        name: "component",
+        message: "Please enter the component name..",
+        default: "Test",
+      });
+    }
+    const answers = await inquirer.prompt(questions);
+
     return {
       ...options,
+      component: options.component || answers.component || "Test",
       template: options.template || defaultTemplate,
     };
   }
 
-  const questions = [];
   if (!options.template) {
     questions.push({
       type: "list",
@@ -109,7 +120,6 @@ async function promptForMissingOptions(options) {
 export async function cli() {
   let options = parseArgumentsIntoOptions();
   options = await promptForMissingOptions(options);
-  console.log(options);
   // Create component files based on selected options
   try {
     await createComponentFiles(options);

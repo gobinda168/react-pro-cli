@@ -27,6 +27,7 @@ rpx
 This command will initiate an interactive prompt that will guide you through the component creation process. You can choose the project template (TypeScript or JavaScript), specify whether you want to use hooks patterns, and decide if you want to generate test cases.
 
 ## Options
+--skip: You can use the --skip option to bypass interactive prompts and provide all options directly through command-line arguments. However, it's important to note that the component name is still mandatory. If it's not provided as a command-line argument, the application will prompt you to enter it.
 
 --template: Specify the project template (TypeScript or JavaScript).
 
@@ -49,6 +50,6 @@ Contributions are welcome! If you encounter any issues or have suggestions for i
 ## License
 This project is licensed under the MIT License - see the LICENSE file for details.
 
-RPX is maintained by Gobinda Das -- Sr. Software Engineer Aptedge.
+RPX is maintained by Gobinda Das -- Sr. Software Engineer, Aptedge.
 
 

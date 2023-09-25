@@ -1,6 +1,6 @@
 {
   "name": "react-pro-cli-x",
-  "version": "1.0.1",
+  "version": "1.1.5",
   "type": "module",
   "description": "A nodejs cli to add react component",
   "main": "index.js",
